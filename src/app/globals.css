@@ -21,3 +21,11 @@
     text-wrap: balance;
   }
 }
+
+.container {
+  @apply max-w-[1000px] mx-auto;
+}
+
+.animation {
+  @apply duration-300 ease-in-out;
+}

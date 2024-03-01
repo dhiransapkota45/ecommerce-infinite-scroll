@@ -35,7 +35,7 @@ const LoadMore = ({ currentPage: firstPage, isNextPageAvailable }: Props) => {
     <>
       <Products products={products} />
       {isNextAvailable && (
-        <div className="" ref={spinnerRef}>
+        <div ref={spinnerRef}>
           <Spinner />
         </div>
       )}

@@ -1,5 +1,6 @@
 "use client";
 import { CURRENCY } from "@/utils/constant";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
@@ -10,16 +11,17 @@ type Props = {
 const ProductCard = ({ product }: Props) => {
   const [checkMouse, setCheckMouse] = useState(false);
   return (
-    <div
+    <Link
+      href={`/${product?.slug}`}
       onMouseEnter={() => setCheckMouse(true)}
       onMouseLeave={() => setCheckMouse(false)}
-      className="hover:cursor-pointer hover:shadow-lg bg-white shadow duration-300 rounded-md overflow-hidden m-4"
+      className="hover:cursor-pointer hover:shadow-lg bg-white shadow animation rounded-md overflow-hidden m-4"
     >
       <div className="w-full h-56 overflow-hidden ">
         <img
           className={`w-full h-full object-cover object-center ${
             checkMouse && "scale-105"
-          } duration-300`}
+          } animation`}
           src={product?.images[0]}
           alt="product"
         />
@@ -61,7 +63,7 @@ const ProductCard = ({ product }: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
