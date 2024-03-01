@@ -13,7 +13,7 @@ const ProductCard = ({ product }: Props) => {
     <div
       onMouseEnter={() => setCheckMouse(true)}
       onMouseLeave={() => setCheckMouse(false)}
-      className="max-w-xs hover:cursor-pointer hover:shadow-lg bg-white shadow duration-300 rounded-md overflow-hidden m-4"
+      className="hover:cursor-pointer hover:shadow-lg bg-white shadow duration-300 rounded-md overflow-hidden m-4"
     >
       <div className="w-full h-56 overflow-hidden ">
         <img
@@ -30,10 +30,10 @@ const ProductCard = ({ product }: Props) => {
         </div>
         <div className=" font-bold text-gray-800">{product?.title}</div>
         <div className=" flex justify-center ">
-          {Array(product?.ratings).fill(<FaStar className="text-red-500" />)}
+          {/* {Array(product?.ratings).fill(<FaStar className="text-red-500" />)}
           {Array(5 - product?.ratings).fill(
             <FaRegStar className=" text-red-500" />
-          )}
+          )} */}
         </div>
 
         <div className="h-[1px] bg-gray-200 my-2 w-full"></div>

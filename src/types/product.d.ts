@@ -26,8 +26,8 @@ interface IProductResponse {
             total: number
             page: number
             limit: number
-            previousPage: number
-            nextPage: number
+            previousPage: boolean
+            nextPage: boolean
         }
         docs: IProduct[]
     }
