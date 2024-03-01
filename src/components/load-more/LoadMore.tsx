@@ -32,14 +32,14 @@ const LoadMore = ({ currentPage: firstPage, isNextPageAvailable }: Props) => {
     }
   }, [inView]);
   return (
-    <div>
+    <>
       <Products products={products} />
       {isNextAvailable && (
-        <div ref={spinnerRef}>
+        <div className="" ref={spinnerRef}>
           <Spinner />
         </div>
       )}
-    </div>
+    </>
   );
 };
 
