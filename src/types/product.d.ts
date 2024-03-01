@@ -1,7 +1,11 @@
 interface IProduct {
     _id: string
     slug: string
-    brand: string[]
+    brand: {
+        _id: string
+        slug: string
+        name: string
+    }
     title: string
     price: number
     strikePrice: number
