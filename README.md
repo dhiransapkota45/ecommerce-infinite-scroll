@@ -27,3 +27,5 @@ Then run the the command ```yarn run dev```
 - __Image Magnification:__ Provides a user-friendly image magnification feature for a detailed view of the product photos.
 - __Optimized Images:__ Utilizes Next.js Image component to optimize images and improve overall application performance.
 
+### Preview:
+Preview available [here](https://ecommerce-infinite-scroll.vercel.app/)
