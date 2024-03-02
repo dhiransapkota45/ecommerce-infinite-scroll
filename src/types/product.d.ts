@@ -1,3 +1,5 @@
+declare module "react-image-magnifiers"
+
 interface IProduct {
     _id: string
     slug: string

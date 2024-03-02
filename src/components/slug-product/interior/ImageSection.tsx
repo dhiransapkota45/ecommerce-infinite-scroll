@@ -1,9 +1,19 @@
 "use client";
+import ImageMagnifier from "@/components/common/ImageMagnifier";
 import React, { useState } from "react";
 
 type Props = {
   productData: IProductResponse;
 };
+
+import {
+  Magnifier,
+  GlassMagnifier,
+  SideBySideMagnifier,
+  PictureInPictureMagnifier,
+  MOUSE_ACTIVATION,
+  TOUCH_ACTIVATION,
+} from "react-image-magnifiers";
 
 const ImageSection = ({ productData }: Props) => {
   const [activeImage, setActiveImage] = useState(productData?.data?.images[0]);
@@ -11,11 +21,12 @@ const ImageSection = ({ productData }: Props) => {
   return (
     <div className=" flex flex-col gap-6">
       <div className=" h-80 border rounded overflow-hidden flex justify-center">
-        <img
+        {/* <img
           src={activeImage}
           alt="product_image"
           className="object-cover h-full"
-        />
+        /> */}
+        <ImageMagnifier featureImage={activeImage} />
       </div>
       <div className=" flex gap-3 justify-center flex-wrap">
         {productData?.data?.images?.map((image, index) => (
