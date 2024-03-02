@@ -1,4 +1,4 @@
-import SingleProduct from "@/components/product/SlugProduct";
+import SingleProduct from "@/components/slug-product/SlugProduct";
 import { getProduct } from "@/server-actions/products";
 import React from "react";
 
