@@ -1,5 +1,5 @@
 "use client";
-import { CURRENCY } from "@/utils/constant";
+import { CURRENCY } from "@/data/constant";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -10,6 +10,7 @@ type Props = {
 };
 
 const ProductCard = ({ product }: Props) => {
+  //state for checking if card is being hovered or not
   const [checkMouse, setCheckMouse] = useState(false);
   return (
     <Link
@@ -34,6 +35,7 @@ const ProductCard = ({ product }: Props) => {
         <div className=" font-bold text-gray-800">{product?.title}</div>
         <div className=" flex justify-center ">
           <div className=" flex">
+            {/* two types of stars are here, one is filled and another is unfilled  */}
             {Array(Math.round(product?.ratings) ?? 0)
               .fill(<FaStar className="text-red-500" />)
               .map((item, index) => (

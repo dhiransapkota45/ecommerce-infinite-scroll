@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import DOMPurify from "dompurify";
 import toast from "react-hot-toast";
 import Counter from "@/components/common/Counter";
-import { CURRENCY } from "@/utils/constant";
+import { CURRENCY } from "@/data/constant";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 type Props = {
@@ -11,11 +11,14 @@ type Props = {
 };
 
 const ProductContent = ({ productData }: Props) => {
+  //state for handling count
   const [counter, setCounter] = useState(0);
 
+  //the description coming from backed is html content, it should be sanitized so that it does not contain any malicious code
   const sanitizedDescription = DOMPurify.sanitize(
     productData?.data?.description ?? ""
   );
+
   return (
     <div>
       <div className="capitalize font-bold text-gray-800 text-3xl">
@@ -24,6 +27,7 @@ const ProductContent = ({ productData }: Props) => {
 
       <div className=" flex items-center gap-2">
         <div className=" flex">
+          {/* two types of stars are here, one is filled and another is unfilled  */}
           {Array(Math.round(productData?.data?.ratings) ?? 0)
             .fill(<FaStar className="text-red-500" />)
             .map((item, index) => (

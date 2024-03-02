@@ -6,26 +6,13 @@ type Props = {
   productData: IProductResponse;
 };
 
-import {
-  Magnifier,
-  GlassMagnifier,
-  SideBySideMagnifier,
-  PictureInPictureMagnifier,
-  MOUSE_ACTIVATION,
-  TOUCH_ACTIVATION,
-} from "react-image-magnifiers";
-
 const ImageSection = ({ productData }: Props) => {
+  //state to keep track which image is being hoverd so that image can be shown in main image container 
   const [activeImage, setActiveImage] = useState(productData?.data?.images[0]);
 
   return (
     <div className=" flex flex-col gap-6">
       <div className=" h-80 border rounded overflow-hidden flex justify-center">
-        {/* <img
-          src={activeImage}
-          alt="product_image"
-          className="object-cover h-full"
-        /> */}
         <ImageMagnifier featureImage={activeImage} />
       </div>
       <div className=" flex gap-3 justify-center flex-wrap">

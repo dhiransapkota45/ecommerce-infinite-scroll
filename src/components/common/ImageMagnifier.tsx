@@ -6,6 +6,7 @@ type props = {
   featureImage: string;
 };
 
+//component takes image source string and creates a magnified image of that image and puts above original image with predeined height and width which creates a magnified image effect
 const ImageMagnifier = ({ featureImage }: props) => {
   const [[x, y], setXY] = useState([0, 0]);
   const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
@@ -30,8 +31,6 @@ const ImageMagnifier = ({ featureImage }: props) => {
 
     setXY([x, y]);
   };
-
-  console.log(x, y);
 
   return (
     <div className="relative">

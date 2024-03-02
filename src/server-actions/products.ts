@@ -1,8 +1,8 @@
 "use server"
 
-import { LIMIT } from "@/utils/constant"
+import { LIMIT } from "@/data/constant"
 
-//comments
+//server action which fetches all the product data
 export const getProducts: (page: number) => Promise<IProductsResponse | null> = async (page) => {
     try {
         const response = await fetch(`${process.env.BACKEND_URL}/api/product/latest/?page=${page}&limit=${LIMIT}`)
@@ -14,6 +14,7 @@ export const getProducts: (page: number) => Promise<IProductsResponse | null> = 
     }
 }
 
+//server action which will fetch a product from product slug
 export const getProduct: (slug: string) => Promise<IProductResponse> = async (slug) => {
     try {
         const response = await fetch(`${process.env.BACKEND_URL}/api/product/for-public/${slug}`)

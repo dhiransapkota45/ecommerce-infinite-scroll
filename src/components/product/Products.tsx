@@ -3,9 +3,7 @@ type Props = {
   products: IProduct[] | undefined;
 };
 
-// css variables
 const Products = ({ products }: Props) => {
-  //state for checking if card is being hovered or not
   return (
     Array.isArray(products) &&
     products?.map((product) => (

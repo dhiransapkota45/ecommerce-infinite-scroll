@@ -11,11 +11,19 @@ type Props = {
 };
 
 const LoadMore = ({ currentPage: firstPage, isNextPageAvailable }: Props) => {
+  //state for tracking latest page in infinite scroll
   const [currentPage, setCurrentPage] = useState(firstPage);
+
+  //checks if nextpage is available or not 
   const [isNextAvailable, setIsNexteAvailable] = useState(isNextPageAvailable);
+
+  //state to append newly fetched data 
   const [products, setProducts] = useState<IProduct[]>([]);
+
+  //to keep track of spinner that if that is in view or not
   const { ref: spinnerRef, inView } = useInView();
 
+  //fetches data using server action and updates above states accrodingly
   const loadMoreProducts = async () => {
     if (isNextAvailable) {
       const data = await getProducts(currentPage + 1);
@@ -26,6 +34,8 @@ const LoadMore = ({ currentPage: firstPage, isNextPageAvailable }: Props) => {
       }
     }
   };
+
+  //when spiner is in view it gets called
   useEffect(() => {
     if (inView) {
       loadMoreProducts();
