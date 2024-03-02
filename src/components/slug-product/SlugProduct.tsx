@@ -13,7 +13,7 @@ const SingleProduct = ({ productData }: Props) => {
   return (
     <div className=" my-20">
       {/* back button implementation */}
-      <div className="container font-medium mx-auto mb-3">
+      <div className="container font-medium mx-auto mb-5">
         <button
           onClick={() => router.back()}
           className=" hover:text-red-600 animation  cursor-pointer flex w-fit items-center px-4 md:px-2"

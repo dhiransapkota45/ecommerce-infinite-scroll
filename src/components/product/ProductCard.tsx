@@ -19,8 +19,9 @@ const ProductCard = ({ product }: Props) => {
       onMouseLeave={() => setCheckMouse(false)}
       className="hover:cursor-pointer hover:shadow-lg bg-white shadow animation rounded-md overflow-hidden m-4"
     >
-      <div className="w-full h-56 overflow-hidden ">
-        <img
+      <div className="w-full h-56 overflow-hidden relative ">
+        <Image
+          fill
           className={`w-full h-full object-cover object-center ${
             checkMouse && "scale-105"
           } animation`}

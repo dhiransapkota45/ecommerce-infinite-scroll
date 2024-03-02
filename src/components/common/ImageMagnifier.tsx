@@ -33,7 +33,7 @@ const ImageMagnifier = ({ featureImage }: props) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative h-96 border rounded overflow-hidden flex justify-center">
       <img
         onMouseEnter={onMouseEnterHandler}
         onMouseMove={onMouseMoveHandler}
