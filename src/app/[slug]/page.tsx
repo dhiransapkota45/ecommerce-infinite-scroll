@@ -1,3 +1,4 @@
+import SingleProduct from "@/components/product/SlugProduct";
 import { getProduct } from "@/server-actions/products";
 import React from "react";
 
@@ -10,7 +11,7 @@ type TContext = {
 
 const page = async (context: TContext) => {
   const productData = await getProduct(context?.params?.slug);
-  return <div>page</div>;
+  return <SingleProduct productData={productData} />;
 };
 
 export default page;

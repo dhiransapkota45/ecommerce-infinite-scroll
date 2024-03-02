@@ -35,7 +35,9 @@ interface IProductsResponse {
 
 interface IProductSingle extends IProduct {
     category: {
-
+        _id: string
+        slug: string
+        title: string
     }
     ingredient: string
     description: string
