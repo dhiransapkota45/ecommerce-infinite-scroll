@@ -10,7 +10,7 @@ type Props = {
   productData: IProductResponse;
 };
 
-const ProductContect = ({ productData }: Props) => {
+const ProductContent = ({ productData }: Props) => {
   const [counter, setCounter] = useState(0);
 
   const sanitizedDescription = DOMPurify.sanitize(
@@ -148,4 +148,4 @@ const ProductContect = ({ productData }: Props) => {
   );
 };
 
-export default ProductContect;
+export default ProductContent;

@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { IoArrowBackOutline } from "react-icons/io5";
 import ImageSection from "./interior/ImageSection";
-import ProductContect from "./interior/ProductContect";
+import ProductContect from "./interior/ProductContent";
 
 type Props = {
   productData: IProductResponse;

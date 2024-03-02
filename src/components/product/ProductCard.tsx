@@ -1,5 +1,6 @@
 "use client";
 import { CURRENCY } from "@/utils/constant";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
@@ -32,10 +33,18 @@ const ProductCard = ({ product }: Props) => {
         </div>
         <div className=" font-bold text-gray-800">{product?.title}</div>
         <div className=" flex justify-center ">
-          {/* {Array(product?.ratings).fill(<FaStar className="text-red-500" />)}
-          {Array(5 - product?.ratings).fill(
-            <FaRegStar className=" text-red-500" />
-          )} */}
+          <div className=" flex">
+            {Array(Math.round(product?.ratings) ?? 0)
+              .fill(<FaStar className="text-red-500" />)
+              .map((item, index) => (
+                <span key={index}>{item}</span>
+              ))}
+            {Array(5 - Math.round(product.ratings) ?? 0)
+              .fill(<FaRegStar className=" text-red-500" />)
+              .map((item, index) => (
+                <span key={index}>{item}</span>
+              ))}
+          </div>
         </div>
 
         <div className="h-[1px] bg-gray-200 my-2 w-full"></div>
